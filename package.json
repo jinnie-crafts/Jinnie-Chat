@@ -1,0 +1,22 @@
+{
+  "name": "jinnie-chat",
+  "version": "1.0.0",
+  "description": "Real-time WhatsApp-style chat app with password-protected rooms",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "chat",
+    "realtime",
+    "socket.io",
+    "whatsapp-style",
+    "password-rooms"
+  ],
+  "author": "karsh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}

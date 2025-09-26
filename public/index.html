@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinnie Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div id="splash-screen">
+  <img src="./jinnie-chats.png" alt="Jinnie Chat Logo" id="splash-logo">
+</div>
+
+<!-- Username Modal -->
+<div id="username-modal" class="show">
+  <div class="modal-content">
+    <h2>Welcome to Jinnie Chat</h2>
+    <input type="text" id="username-input" placeholder="Enter your name">
+    <button id="username-btn">Continue</button>
+  </div>
+</div>
+
+<!-- Room Modal -->
+<div id="room-modal">
+  <div class="modal-content">
+    <h3>Create Room</h3>
+    <input type="text" id="new-room-input" placeholder="Room Name">
+    <input type="password" id="new-room-password" placeholder="Set Password">
+    <button id="new-room-btn">Create Room</button>
+
+    <h3>Or Join Existing Room</h3>
+    <ul id="room-list"></ul>
+    <div id="join-password-container" class="hidden">
+      <input type="password" id="join-room-password" placeholder="Enter Room Password">
+      <button id="join-room-btn">Join Room</button>
+      <p id="password-alert" class="hidden"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Chat Container -->
+<div class="chat-container hidden">
+  <header>
+    <h1 id="chat-title">Jinnie Chat</h1>
+    <h4 id="chat-subtitle"></h4>
+  </header>
+  <div id="chat-body"></div>
+  <div id="typing-indicator" class="hidden">Someone is typing...</div>
+  <div class="chat-input-section">
+    <input type="text" id="message-input" placeholder="Type a message...">
+    <input type="file" id="file-input" style="display:none;">
+    <button id="file-btn">📎</button>
+    <button id="send-btn">➡️</button>
+  </div>
+</div>
+
+<!-- Invite Modal -->
+<div id="inviteModal" class="hidden">
+  <div class="invite-box">
+    <p>Share the URL to invite your friend:</p>
+    <input type="text" id="invite-url" readonly>
+    <button id="copy-btn">Copy</button>
+    <button id="close-invite">Close</button>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="hidden"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

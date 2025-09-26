@@ -1,0 +1,64 @@
+/* Splash Screen */
+#splash-screen {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background:#fff; display:flex; justify-content:center; align-items:center;
+  z-index:10000; transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+#splash-screen.fade-out { opacity:0; visibility:hidden; }
+#splash-logo { width:150px; height:auto; }
+
+/* Username Modal */
+#username-modal {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  display: flex; justify-content:center; align-items:center;
+  background: rgba(0,0,0,0.4); z-index:10001; opacity:0; transition:0.5s;
+}
+#username-modal.show { opacity:1; }
+#username-modal .modal-content {
+  background:#fff; padding:30px 40px; border-radius:12px;
+  text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+#username-modal input { padding:10px 15px; font-size:16px; width:100%; margin-top:15px; border-radius:8px; border:1px solid #ccc; }
+#username-modal button { margin-top:20px; padding:10px 20px; font-size:16px; background:#075E54; color:#fff; border:none; border-radius:8px; cursor:pointer; transition:0.3s; }
+#username-modal button:hover { background:#0a7567; }
+
+/* Room Modal */
+#room-modal { position:fixed; top:0; left:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; background: rgba(0,0,0,0.4); z-index:10001; }
+#room-modal .modal-content { background:#fff; padding:30px 40px; border-radius:12px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.2); max-width:400px; width:90%; }
+#room-modal input, #join-password-container input { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #ccc; }
+#room-list { list-style:none; padding:0; margin:10px 0; max-height:150px; overflow-y:auto; }
+#room-list li { padding:8px; margin:5px 0; background:#f1f1f1; border-radius:6px; cursor:pointer; }
+#room-list li:hover { background:#ddd; }
+#join-password-container { display:flex; flex-direction:column; }
+#join-password-container.hidden { display:none; }
+#password-alert { color:red; margin-top:5px; }
+#password-alert.hidden { display:none; }
+
+/* Chat Container */
+.chat-container { display:flex; flex-direction:column; height:100vh; max-width:600px; margin:0 auto; }
+.chat-container header { background:#075E54; color:#fff; padding:10px; text-align:center; }
+#chat-body { flex:1; overflow-y:auto; padding:10px; background:#e5ddd5; display:flex; flex-direction:column; }
+.message { padding:8px 12px; margin:5px 0; border-radius:8px; max-width:70%; }
+.message.user { background:#dcf8c6; align-self:flex-end; }
+.message.other { background:#fff; align-self:flex-start; }
+.timestamp { font-size:10px; color:#999; display:block; text-align:right; margin-top:2px; }
+
+/* Typing Indicator */
+#typing-indicator { text-align:center; font-style:italic; color:#555; margin-bottom:5px; }
+
+/* Chat Input */
+.chat-input-section { display:flex; gap:5px; padding:10px; background:#f1f1f1; align-items:center; }
+.chat-input-section input[type="text"] { flex:1; padding:8px 12px; border-radius:20px; border:1px solid #ccc; }
+.chat-input-section button { padding:8px 12px; border:none; border-radius:50%; background:#075E54; color:#fff; cursor:pointer; }
+.chat-input-section button:hover { background:#0a7567; }
+
+/* Invite Modal */
+#inviteModal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); display:flex; justify-content:center; align-items:center; z-index:10002; }
+#inviteModal.hidden { display:none; }
+.invite-box { background:#fff; padding:20px; border-radius:10px; display:flex; flex-direction:column; gap:10px; align-items:center; max-width:400px; width:90%; }
+.invite-box input { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; }
+.invite-box button { padding:6px 10px; background:#075E54; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+
+/* Toast */
+#toast { position:fixed; bottom:70px; left:50%; transform:translateX(-50%); background:#333; color:#fff; padding:10px 20px; border-radius:20px; opacity:0; transition:0.5s; }
+#toast.show { opacity:1; }
